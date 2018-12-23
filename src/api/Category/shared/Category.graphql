@@ -1,0 +1,12 @@
+type Category {
+  id: Int!
+  name: String!
+  order: Int!
+  createdAt: String!
+  updatedAt: String!
+  subCategories: [SubCategory]
+}
+
+type Query {
+  category: Category
+}

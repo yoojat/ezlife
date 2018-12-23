@@ -1,0 +1,15 @@
+type User {
+  id: Int!
+  uniqueKey: String
+  userId: String!
+  password: String!
+  inputPassword: String
+  createdAt: String
+  updatedAt: String
+  createdAt: String!
+  updatedAt: String
+}
+
+type Query {
+  user: User
+}

@@ -1,9 +1,105 @@
-type Query {
-  sayBye: String!
-  sayHello(name: String!): SayHelloResponse!
+type CreateCategoryResponse {
+  ok: Boolean!
+  error: String
 }
 
-type SayHelloResponse {
-  text: String!
-  error: Boolean!
+type Mutation {
+  CreateCategory(name: String!, order: Int): CreateCategoryResponse!
+  DeleteCategory(id: Int!): DeleteCategoryResponse!
+  ModifyCategory(id: Int!, name: String, order: Int): ModifyCategoryResponse!
+  CreateProduct(name: String!, order: Int, content: String!): CreateProductResponse!
+  CreateSubCategory(name: String!, order: Int, categoryId: Int!): CreateSubCategoryResponse!
+  DeleteSubCategory(id: Int!): DeleteSubCategoryResponse!
+  ModifySubCategory(id: Int!, name: String, order: Int, categoryId: Int): ModifySubCategoryResponse!
+}
+
+type DeleteCategoryResponse {
+  ok: Boolean!
+  error: String
+}
+
+type GetCategoriesResponse {
+  ok: Boolean!
+  error: String
+  categories: [Category]
+}
+
+type Query {
+  GetCategories: GetCategoriesResponse!
+  category: Category
+  product: Product
+  GetSubCategories: GetSubCategoriesResponse!
+  subCategory: SubCategory
+  user: User
+}
+
+type ModifyCategoryResponse {
+  ok: Boolean!
+  error: String
+}
+
+type Category {
+  id: Int!
+  name: String!
+  order: Int!
+  createdAt: String!
+  updatedAt: String!
+  subCategories: [SubCategory]
+}
+
+type CreateProductResponse {
+  ok: Boolean!
+  error: String
+}
+
+type Product {
+  id: Int!
+  name: String!
+  order: Int!
+  content: String!
+  createdAt: String!
+  updatedAt: String!
+}
+
+type CreateSubCategoryResponse {
+  ok: Boolean!
+  error: String
+}
+
+type DeleteSubCategoryResponse {
+  ok: Boolean!
+  error: String
+}
+
+type GetSubCategoriesResponse {
+  ok: Boolean!
+  error: String
+  subCategories: [SubCategory]
+}
+
+type ModifySubCategoryResponse {
+  ok: Boolean!
+  error: String
+}
+
+type SubCategory {
+  id: Int!
+  name: String!
+  order: Int!
+  category: Category
+  categoryId: Int
+  createdAt: String!
+  updatedAt: String!
+}
+
+type User {
+  id: Int!
+  uniqueKey: String
+  userId: String!
+  password: String!
+  inputPassword: String
+  createdAt: String
+  updatedAt: String
+  createdAt: String!
+  updatedAt: String
 }

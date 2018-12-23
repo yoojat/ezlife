@@ -1,0 +1,13 @@
+type SubCategory {
+  id: Int!
+  name: String!
+  order: Int!
+  category: Category
+  categoryId: Int
+  createdAt: String!
+  updatedAt: String!
+}
+
+type Query {
+  subCategory: SubCategory
+}

@@ -1,0 +1,12 @@
+type Product {
+  id: Int!
+  name: String!
+  order: Int!
+  content: String!
+  createdAt: String!
+  updatedAt: String!
+}
+
+type Query {
+  product: Product
+}

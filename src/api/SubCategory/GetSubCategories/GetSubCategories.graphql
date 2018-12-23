@@ -1,0 +1,8 @@
+type GetSubCategoriesResponse {
+  ok: Boolean!
+  error: String
+  subCategories: [SubCategory]
+}
+type Query {
+  GetSubCategories: GetSubCategoriesResponse!
+}

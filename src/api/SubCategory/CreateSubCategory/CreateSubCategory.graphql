@@ -1,0 +1,11 @@
+type CreateSubCategoryResponse {
+  ok: Boolean!
+  error: String
+}
+type Mutation {
+  CreateSubCategory(
+    name: String!
+    order: Int
+    categoryId: Int!
+  ): CreateSubCategoryResponse!
+}

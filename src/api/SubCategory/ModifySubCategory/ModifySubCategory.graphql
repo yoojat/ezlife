@@ -1,0 +1,12 @@
+type ModifySubCategoryResponse {
+  ok: Boolean!
+  error: String
+}
+type Mutation {
+  ModifySubCategory(
+    id: Int!
+    name: String
+    order: Int
+    categoryId: Int
+  ): ModifySubCategoryResponse!
+}
